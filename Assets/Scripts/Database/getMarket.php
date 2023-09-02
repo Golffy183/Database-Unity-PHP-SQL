@@ -1,8 +1,8 @@
 <?php
 
-$db = "winner_admin_01";//Your database name
-$dbu = "winner_admin_01";//Your database username
-$dbp = "1234";//Your database users' password
+$db = "winner_****_**";//Your database name
+$dbu = "winner_****_**";//Your database username
+$dbp = "****";//Your database users' password
 $host = "localhost";//MySQL server - usually localhost
 
 // Create connection
@@ -14,8 +14,6 @@ if ($conn->connect_error) {
 
 
 // Retrieve data from database
-
-// $sql = "SELECT ID, PLAYER_NAME, SCORE, ZOMBIE FROM information ORDER BY SCORE DESC LIMIT 10";
 $sql = "SELECT Market_ID, Name FROM Market";
 $result = $conn->query($sql);
 

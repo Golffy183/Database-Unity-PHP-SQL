@@ -1,8 +1,8 @@
 <?php
 
-$db = "winner_admin_01";//Your database name
-$dbu = "winner_admin_01";//Your database username
-$dbp = "1234";//Your database users' password
+$db = "winner_****_**";//Your database name
+$dbu = "winner_****_**";//Your database username
+$dbp = "****";//Your database users' password
 $host = "localhost";//MySQL server - usually localhost
 
 // Create connection

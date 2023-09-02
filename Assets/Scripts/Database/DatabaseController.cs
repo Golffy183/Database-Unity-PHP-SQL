@@ -20,6 +20,8 @@ public class DatabaseController : MonoBehaviour
         instance = this;
     }
 
+    protected string databasePath = "winner_user_**";
+
     [SerializeField] private GameObject connectionButton;
     [SerializeField] private GameObject marketButton;
     [SerializeField] private GameObject inventoryButton;
@@ -55,7 +57,7 @@ public class DatabaseController : MonoBehaviour
     IEnumerator InfoAccount()
     {
 
-        UnityWebRequest www = UnityWebRequest.Get("https://www.game-camtcmu.com/project/getAccount.php");
+        UnityWebRequest www = UnityWebRequest.Get("https://www.game-camtcmu.com/" + databasePath + "/getAccount.php");
         yield return www.SendWebRequest();
         if (www.isHttpError || www.isNetworkError)
         {
@@ -83,7 +85,7 @@ public class DatabaseController : MonoBehaviour
 
     IEnumerator Market()
     {
-        UnityWebRequest www = UnityWebRequest.Get("https://www.game-camtcmu.com/project/getMarket.php");
+        UnityWebRequest www = UnityWebRequest.Get("https://www.game-camtcmu.com/" + databasePath + "/getMarket.php");
         yield return www.SendWebRequest();
         if (www.isHttpError || www.isNetworkError)
         {
@@ -122,7 +124,7 @@ public class DatabaseController : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("Market_ID", marketID);
-        WWW www = new WWW("https://www.game-camtcmu.com/project/getItem.php", form);
+        WWW www = new WWW("https://www.game-camtcmu.com/" + databasePath + "/getItem.php", form);
         yield return www;
         if (www.error != null)
         {
@@ -170,7 +172,7 @@ public class DatabaseController : MonoBehaviour
         form.AddField("Account_ID", Account_ID);
         form.AddField("Item_ID", Item_ID);
         form.AddField("Item_Price", Item_Price);
-        WWW www = new WWW("https://www.game-camtcmu.com/project/buyItem.php", form);
+        WWW www = new WWW("https://www.game-camtcmu.com/" + databasePath + "/buyItem.php", form);
         yield return www;
         if (www.error != null)
         {
@@ -196,7 +198,7 @@ public class DatabaseController : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("Account_ID", AccountID);
-        WWW www = new WWW("https://www.game-camtcmu.com/project/getInventory.php", form);
+        WWW www = new WWW("https://www.game-camtcmu.com/" + databasePath + "/getInventory.php", form);
         yield return www;
         if (www.error != null)
         {
@@ -244,7 +246,7 @@ public class DatabaseController : MonoBehaviour
         form.AddField("Account_ID", Account_ID);
         form.AddField("Item_ID", Item_ID);
         form.AddField("Item_Price", Item_Price);
-        WWW www = new WWW("https://www.game-camtcmu.com/project/sellItem.php", form);
+        WWW www = new WWW("https://www.game-camtcmu.com/" + databasePath + "/sellItem.php", form);
         yield return www;
         if (www.error != null)
         {

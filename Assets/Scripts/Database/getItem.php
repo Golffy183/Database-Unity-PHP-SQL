@@ -1,9 +1,9 @@
 <?php
 
-$db = "winner_admin_01"; //Your database name
-$dbu = "winner_admin_01"; //Your database username
-$dbp = "1234"; //Your database users' password
-$host = "localhost"; //MySQL server - usually localhost
+$db = "winner_****_**";//Your database name
+$dbu = "winner_****_**";//Your database username
+$dbp = "****";//Your database users' password
+$host = "localhost";//MySQL server - usually localhost
 
 // Create connection
 $conn = new mysqli($host, $dbu, $dbp, $db);
@@ -13,10 +13,8 @@ if ($conn->connect_error) {
 }
 
 
-// $Market_ID = $_POST['Market_ID'];
 $Market_ID = $_POST['Market_ID'];
 
-// $sql = "SELECT Market_ID, Name FROM Market";
 $sql = "SELECT Item_ID, Name, Description, Price FROM Item WHERE Market_ID = '$Market_ID'";
 $result = $conn->query($sql);
 
